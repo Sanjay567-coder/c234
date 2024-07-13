@@ -1,0 +1,34 @@
+
+
+join statement that will only fetch the
+total_amount and date of purchase for the orders
+
+
+
+    select company_orders.total_amount company_orders.date inner join from company_orders
+
+
+SELECT  
+     order_items.id,
+     company_orders.date,
+     company_orders.total_amount
+FROM order_items
+LEFT JOIN
+company_orders ON 
+order_items.company_order_id = company_orders.idcompany_orders.id = order_items.company_order_id
+
+SELECT  
+     order_items.id,
+     company_orders.date,
+     company_orders.total_amount
+     
+     customers.first_name
+FROM order_items
+LEFT JOIN
+company_orders  ON 
+//order_items.company_order_id = company_orders.id
+    company_orders.id = order_items.company_order_id
+
+LEFT JOIN
+customers ONcustomers.id = company_orders.customer_id
+order_items.customer_id = customers.id
